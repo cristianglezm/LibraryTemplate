@@ -11,6 +11,7 @@ A simple library template for C++
 * add dependencies and modules if needed.
 * change doxyfile project name, mainpage, description.
 * examples, test, tools create their own cmakelist.txt
+* change README.md
 
 ## Building ##
 
