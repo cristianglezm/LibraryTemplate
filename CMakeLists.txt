@@ -88,7 +88,9 @@ endif(${LIBRARY_NAME}_BUILD_TOOLS)
 if(${LIBRARY_NAME}_BUILD_DOCS)
     find_package(Doxygen)
     IF(DOXYGEN_FOUND)
-        SET(DOXYGEN_INPUT "${CMAKE_SOURCE_DIR}/doxyfile")
+	configure_file(${CMAKE_CURRENT_SOURCE_DIR}/doxyfile.in 
+			${CMAKE_CURRENT_BINARY_DIR}/doxyfile @ONLY)
+        SET(DOXYGEN_INPUT "${CMAKE_CURRENT_BINARY_DIR}/doxyfile")
         SET(DOXYGEN_OUTPUT "${CMAKE_SOURCE_DIR}/docs")
 
         ADD_CUSTOM_COMMAND(
