@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 set(LIBRARY_NAME "LibraryTemplate")
+set(LIBRARY_DESCRIPTION "description")
 
 ################################################################################
 ### User options.
@@ -47,13 +48,13 @@ endif(NOT ${LIBRARY_NAME}_BUILD_STATIC)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")
 if(NOT CMAKE_BUILD_TYPE)
-	set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
 endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -fexpensive-optimizations")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -fexpensive-optimizations")
 endif()
 
 ################################################################################
@@ -61,8 +62,8 @@ endif()
 ################################################################################
 
 if(${LIBRARY_NAME}_BUILD_TESTS)
-	enable_testing()
-	add_subdirectory(test)
+    enable_testing()
+    add_subdirectory(test)
 endif(${LIBRARY_NAME}_BUILD_TESTS)
 
 ################################################################################
@@ -88,8 +89,8 @@ endif(${LIBRARY_NAME}_BUILD_TOOLS)
 if(${LIBRARY_NAME}_BUILD_DOCS)
     find_package(Doxygen)
     IF(DOXYGEN_FOUND)
-	configure_file(${CMAKE_CURRENT_SOURCE_DIR}/doxyfile.in 
-			${CMAKE_CURRENT_BINARY_DIR}/doxyfile @ONLY)
+        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/doxyfile.in 
+                ${CMAKE_CURRENT_BINARY_DIR}/doxyfile @ONLY)
         SET(DOXYGEN_INPUT "${CMAKE_CURRENT_BINARY_DIR}/doxyfile")
         SET(DOXYGEN_OUTPUT "${CMAKE_SOURCE_DIR}/docs")
 

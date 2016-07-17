@@ -7,9 +7,8 @@ A simple library template for C++
 * git clone https://github.com/cristianglezm/libraryTemplate
 * cd libraryTemplate
 * remove .gitignores and folders that won't be used.
-* change Cmakelists.txt LIBRARY_NAME
+* change Cmakelists.txt LIBRARY_NAME and LIBRARY_DESCRIPTION
 * add dependencies and modules if needed.
-* change doxyfile project name, mainpage, description.
 * examples, test, tools create their own cmakelist.txt
 * change README.md
 
