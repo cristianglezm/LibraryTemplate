@@ -43,10 +43,10 @@ endif(NOT ${LIBRARY_NAME}_BUILD_STATIC)
 ################################################################################
 
 ################################################################################
-### Enable C++14 and warnings
+### Enable C++17 and warnings
 ################################################################################
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
 endif()
